@@ -1,0 +1,34 @@
+#Colocar o nome da pasta front no lugar dos "*"
+ng new *****
+
+#atalho para entrar no VS code 
+code .
+
+bootstrap cdn
+font awesome cdn
+
+
+# ngx-toastr
+npm i ngx-toastr
+npm install @angular/animations --save
+
+
+ng g class models/product --skipTests
+
+# Para alterar o sistema de segurança se der erro
+#Restricted
+#AllSigned
+#RemoteSigned
+#Unrestricted
+#Bypass
+#Undefined
+
+PS C:\Users\LINQ> Set-ExecutionPolicy RemoteSigned
+PS C:\Users\LINQ> Get-ExecutionPolicy
+RemoteSigned
+
+ng g c product/list-product --skipTest --flat
+ng g c product/detail-product --skipTest --flat
+ng g c product/new-product --skipTest --flat
+ng g c product/update-product --skipTest --flat
+ng g s service/product --skipTest --flat
