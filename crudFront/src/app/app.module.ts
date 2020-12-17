@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ListProductComponent } from './product/list-product.component';
-import { DatailProductComponent } from './product/datail-product.component';
+import { DetailProductComponent } from './product/detail-product.component';
 import { NewProductComponent } from './product/new-product.component';
 import { UpdateProductComponent } from './product/update-product.component';
 
@@ -12,14 +12,16 @@ import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { XyzComponent } from './xyz/xyz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListProductComponent,
-    DatailProductComponent,
+    DetailProductComponent,
     NewProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    XyzComponent
   ],
   imports: [
     BrowserModule,
