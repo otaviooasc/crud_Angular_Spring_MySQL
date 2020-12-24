@@ -1,1 +1,20 @@
-{{product | json}}
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let product of product">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td><button class="btn btn-outline-warning" routerLink="/update/{{product.id}}"><i class="fas fa-edit"></i></button></td>
+        <td><button class="btn btn-outline-danger" (click)="delete(product.id)"><i class="fas fa-trash-alt"></i></button></td>
+      </tr>
+    </tbody>
+  </table>

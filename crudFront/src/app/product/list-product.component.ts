@@ -27,4 +27,8 @@ export class ListProductComponent implements OnInit {
     );
   }
 
+  delete(id: number) { 
+    alert('Delete the id ' + id);
+  }
+
 }
