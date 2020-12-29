@@ -58,7 +58,7 @@ public class ProductController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody ProductDto productDto){
+    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody ProductDto productDto){
         if(!productService.existsById(id))
             return new ResponseEntity(new Message("Does not exist"), HttpStatus.NOT_FOUND);
         if(productService.existsByName(productDto.getName()) && productService.getByNames(productDto.getName()).get().getId() != id)

@@ -18,7 +18,7 @@ export class ProductService {
   }
 
   public detail(id: number): Observable<Product> {
-    return this.httpClient.get<Product>(this.productURL + 'detail/${id}');
+    return this.httpClient.get<Product>(this.productURL + 'detail/' + id);
   }
   
   public detailName(name: string): Observable<Product> {
@@ -30,10 +30,10 @@ export class ProductService {
   }
 
   public update(id: number, product: Product): Observable<any> {
-    return this.httpClient.put<any>(this.productURL + 'update/${id}', product);
+    return this.httpClient.put<any>(this.productURL + 'update/' + id, product);
   }
 
   public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.productURL + 'delete/${id}');
+    return this.httpClient.delete<any>(this.productURL + 'delete/' + id);
   }
 }

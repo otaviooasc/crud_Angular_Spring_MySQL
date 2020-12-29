@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from './../service/-product.service';
 import { Product } from './../models/product';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class ListProductComponent implements OnInit {
 
   product: Product[] = [];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.uploadProduct();
@@ -28,7 +30,18 @@ export class ListProductComponent implements OnInit {
   }
 
   delete(id: number) { 
-    alert('Delete the id ' + id);
+    this.productService.delete(id).subscribe(
+      data => {
+        this.toastr.success('Deleted product!', 'Ok', {
+          timeOut: 3000, positionClass: 'toast-top-center',
+        });
+        this.uploadProduct();
+      },
+      err =>{
+        this.toastr.error(err.error.message, 'Fail', {
+          timeOut: 3000, positionClass: 'toast-top-center',
+        });
+      }
+    );
   }
-
 }
